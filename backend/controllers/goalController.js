@@ -1,5 +1,4 @@
 const asyncHandler = require("express-async-handler");
-const { findById } = require("../model/goalModel");
 
 const Goal = require("../model/goalModel");
 
@@ -26,7 +25,7 @@ const updateGoal = asyncHandler(async (req, res) => {
     throw new Error("Goal not found");
   }
   const updatedGoal = await Goal.findByIdAndUpdate(req.params.id, req.body, {
-    neww: true,
+    new: true,
   });
   res.status(200).json(updatedGoal);
 });
