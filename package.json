@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Akash Bajpai",
   "license": "MIT",
@@ -17,9 +19,6 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
-    "nodemon": "^2.0.16"
-  },
-  "devDependencies": {
-    "concurrently": "^7.1.0"
+    "nodemon": "^2.0.15"
   }
 }
